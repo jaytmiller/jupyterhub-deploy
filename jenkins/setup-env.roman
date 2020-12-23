@@ -35,4 +35,4 @@ export IMAGE_VULNERABILITY_LEVEL="medium"
 
 # ----------------- values derived from basic inputs ---------------------
 
-. derived-env
+. ./derived-env
