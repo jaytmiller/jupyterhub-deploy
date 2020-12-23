@@ -1,4 +1,7 @@
- 
+#
+#
+#
+
 # Clone and customize this for your deployment
 #
 # NOTE:  must be sourced from jupyterhub-deploy root directory
@@ -8,8 +11,9 @@
 
 export ACCOUNT_ID=spacetelescope
 export ADMIN_ROLENAME=admin-role
-export DEPLOYMENT_NAME=roman
-export IMAGE_TAG=roman-latest
+
+# export DEPLOYMENT_NAME=roman
+export IMAGE_TAG=${DEPLOYMENT_NAME}-latest
 export COMMON_TAG=common-latest
 
 # sandbox, dev, test, or prod
