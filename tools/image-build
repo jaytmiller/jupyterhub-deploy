@@ -25,7 +25,7 @@ cd ${IMAGE_DIR}
 echo "========================= Building $IMAGE_ID USE_FROZEN=${USE_FROZEN} =========================="
 time docker build --tag ${IMAGE_ID} --build-arg USE_FROZEN=${USE_FROZEN} --build-arg BASE_IMAGE=${COMMON_ID} .
 
-if [[ "$USE_FROZEN" == "0" ]]; then
+if [ "$USE_FROZEN" = "0" ]; then
     echo "========================= Freezing Requirements =========================="
     time image-freeze
 fi
