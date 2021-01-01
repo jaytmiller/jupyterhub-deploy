@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh '''cp jenkins/setup-env.jenkins  setup-env;  . setup-env; image-build
+        sh '''cp jenkins/setup-env.jenkins  setup-env;  chmod u+x setup-env; . setup-env; image-build
 '''
       }
     }
