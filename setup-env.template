@@ -12,7 +12,7 @@
 export ACCOUNT_ID=spacetelescope
 export ADMIN_ROLENAME=admin-role
 
-export DEPLOYMENT_NAME=${DEPLOYMEMT_NAME:-roman}
+export DEPLOYMENT_NAME=${DEPLOYMENT_NAME:-roman}
 
 export IMAGE_TAG=${DEPLOYMENT_NAME}-latest
 export COMMON_TAG=common-latest
