@@ -2,6 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+      agent any
       steps {
         sh '''cp jenkins/setup-env.jenkins  setup-env
 
@@ -15,6 +16,7 @@ image-build
     stage('Test') {
       steps {
         sh '''. setup-env
+
 image-test
 '''
       }
