@@ -14,14 +14,14 @@ export ADMIN_ROLENAME=admin-role
 
 export DEPLOYMENT_NAME=${DEPLOYMENT_NAME:-roman}
 
-export IMAGE_TAG=${DEPLOYMENT_NAME}-latest
-export COMMON_TAG=common-latest
+# use 0 for loosely pinned package versions,  1 production build from fixed versions.
+export USE_FROZEN=${USE_FROZEN:-1}
+
+export IMAGE_TAG=${DEPLOYMENT_NAME}-${USE_FROZEN}
+export COMMON_TAG=common-${USE_FROZEN}
 
 # sandbox, dev, test, or prod
 export ENVIRONMENT=${ENVIRONMENT:-sandbox}
-
-# use 0 for loosely pinned package versions,  1 production build from fixed versions.
-export USE_FROZEN=${USE_FROZEN:-1}
 
 # Set to 1 for e.g. personal laptop build
 export PERSONAL_IMAGE=${PERSONAL_IMAGE:-1}
