@@ -4,7 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         sh '''cp jenkins/setup-env.jenkins  setup-env
+
 . setup-env
+
 image-build
 '''
       }
