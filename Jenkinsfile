@@ -10,6 +10,14 @@ image-build
       }
     }
 
+    stage('Test') {
+      steps {
+        sh '''. setup-env
+image-test
+'''
+      }
+    }
+
   }
   environment {
     DEPLOYMENT_NAME = 'roman'
