@@ -21,7 +21,7 @@ export COMMON_TAG=common-latest
 export ENVIRONMENT=${ENVIRONMENT:-sandbox}
 
 # use 0 for loosely pinned package versions,  1 production build from fixed versions.
-# export USE_FROZEN=${USE_FROZEN:-1}
+export USE_FROZEN=${USE_FROZEN:-1}
 
 # Set to 1 for e.g. personal laptop build
 export PERSONAL_IMAGE=${PERSONAL_IMAGE:-1}
