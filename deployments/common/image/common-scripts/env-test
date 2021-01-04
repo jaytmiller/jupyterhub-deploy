@@ -13,15 +13,19 @@ if [[ -d ${kernel_test_dir} ]]; then
 
     source /opt/common-scripts/env-activate ${kernel}
 
-    # Import every Python package listted in the "imports" file
-    if [[ -f ${kernel_test_dir}/imports ]]; then
-        /opt/common-scripts/test-imports `cat ${kernel_test_dir}/imports`
-    fi
-
-    # Run every notebook path listed in "notebooks",  one per line
-    if [[ -f ${kernel_test_dir}/notebooks ]]; then
-        /opt/common-scripts/test-notebooks  $kernel  `cat  ${kernel_test_dir}/notebooks`
-    fi
+    # Import every Python package listed in *imports files,  one per line
+    # These can be comprehensive or parallel specific install files
+    for import_list in `find ${kernel_test_dir} -name '*imports'`;
+    do
+        /opt/common-scripts/test-imports `cat ${import_list}`
+    done
+    
+    # Run every notebook path listed in *notebooks files,  one per line
+    # These can be comprehensive or parallel specific install files
+    for notebook_list in `find ${kernel_test_dir} -name '*notebooks'`;
+    do
+        /opt/common-scripts/test-notebooks $kernel `cat ${notebook_list}`
+    done
 
     # Run every notebook (*.ipynb) in the environment tests directory
     /opt/common-scripts/test-notebooks  $kernel  `find ${kernel_test_dir} -name '*.ipynb'`
