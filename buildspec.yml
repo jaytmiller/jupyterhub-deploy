@@ -1,7 +1,5 @@
 version: 0.2
 
-run-as: ubuntu
-
 env:
   shell: bash
   variables:
@@ -30,40 +28,27 @@ env:
 phases:
   install:
     runtime-versions:
-      runtime: aws/codebuild/standard:5.0
+      docker: 19
     commands:
-      - echo ---------------------------------------------------------------
-      - echo Installing node...
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      - bash ~/.nvm/nvm.sh
-      - source ~/.bashrc
-      - nvm install node
-      - npm config set registry http://registry.npmjs.org/
       - echo ---------------------------------------------------------------
       - echo Installing miniconda...
       - wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
       - chmod +x Miniconda3-latest-Linux-x86_64.sh
       - ./Miniconda3-latest-Linux-x86_64.sh -b -p ~/python
-      - /home/ec2-user/python/bin/conda   init
-      - source /home/ec2-user/.bashrc
+      - ~/python/bin/conda   init
+      - source ~/.bashrc
       - echo ---------------------------------------------------------------
       - echo Installing pip requirements...
       - pip install -r requirements.txt
-  build:
-    commands:
       - echo ---------------------------------------------------------------
       - echo Sourcing environment files...
       - source stable-env
       - source derived-env
-      - echo ---------------------------------------------------------------
+  build:
+    commands:
       - image-build
   post_build:
     commands:
-      - echo ---------------------------------------------------------------
-      - echo Sourcing environment files...
-      - source stable-env
-      - source derived-env
-      - echo ---------------------------------------------------------------
       - image-test
-      - image-push
-      - image-scan
+      # - image-push
+      # - image-scan
