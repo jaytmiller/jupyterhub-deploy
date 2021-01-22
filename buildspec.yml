@@ -29,7 +29,6 @@ env:
 
 phases:
   install:
-    run-as: ubuntu
     runtime-versions:
       runtime: aws/codebuild/standard:5.0
     commands:
@@ -51,7 +50,6 @@ phases:
       - echo Installing pip requirements...
       - pip install -r requirements.txt
   build:
-    run-as: ubuntu
     commands:
       - echo ---------------------------------------------------------------
       - echo Sourcing environment files...
@@ -60,7 +58,6 @@ phases:
       - echo ---------------------------------------------------------------
       - image-build
   post_build:
-    run-as: ubuntu
     commands:
       - echo ---------------------------------------------------------------
       - echo Sourcing environment files...
