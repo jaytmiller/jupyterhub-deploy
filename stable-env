@@ -7,7 +7,7 @@ export USE_FROZEN=1
 export PERSONAL_IMAGE=0
 
 # Additional parameters for image-exec Docker run command, e.g. add mounts here
-export IMAGE_RUN_PARS="--rm -p 8888:8888 -it"
+export IMAGE_RUN_PARS="--rm"
 
 # Image scanning,  report Ubuntu status for this version of Ubuntu
 export IMAGE_UBUNTU_NAME="Focal"
