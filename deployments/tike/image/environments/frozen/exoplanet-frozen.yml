@@ -259,7 +259,7 @@ dependencies:
     - traitlets==5.0.5
     - typed-ast==1.4.3
     - typing-extensions==3.7.4.3
-    - uncertainties==3.1.5
+    - uncertainties==2.4.4
     - urllib3==1.26.5
     - wcwidth==0.2.5
     - webencodings==0.5.1
