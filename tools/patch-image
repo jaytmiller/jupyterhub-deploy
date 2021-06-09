@@ -33,7 +33,11 @@ INSTALLED_PATCH=${PATCH_DIR}/`basename $PATCH_FILE`
 
 PATCH_CONTAINER=image-patched
 
+REPO=`echo $IMAGE_ID | cut -d':' -f1`
+
 # -----------------------------------------------------------------------------------
+docker image tag  ${IMAGE_ID}   ${REPO}:pre-patch
+
 docker container rm -f ${PATCH_CONTAINER}  >& /dev/null
 
 # Start a container to use as a target for cp and exec;  use sleep to keep it running.

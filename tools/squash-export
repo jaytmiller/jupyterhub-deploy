@@ -12,4 +12,4 @@ export IMAGE_RUN_PARS="${IMAGE_RUN_PARS} -d -t -u 0 --rm"
 
 CONTAINER=`docker run $IMAGE_RUN_PARS $IMG  /bin/sleep 28800`
 
-time docker export $CONTAINER  > ${EXPORT_FILE}
+docker export $CONTAINER  > ${EXPORT_FILE}

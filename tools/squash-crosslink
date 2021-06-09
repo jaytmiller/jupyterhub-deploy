@@ -8,9 +8,8 @@ IMG=${1:-${IMAGE_ID}}
 # Write out a fully specified crosslink command as a parameterless patch script.
 
 cat >/tmp/squash.patch <<EOF
-/opt/common-scripts/crosslink --link /bin/conda
+/opt/common-scripts/crosslink --link /opt/conda
 EOF
-
 
 # -------------------------------------------------------------------------------
 # Execute the crosslink patch script to create a new image where redundant

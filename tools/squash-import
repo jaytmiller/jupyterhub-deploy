@@ -3,7 +3,7 @@
 # This script uses "docker import" to import the contents of an image
 # export file to a new image.
 
-set -eux
+set -eu
 
 IMG=${1:-${IMAGE_ID}}
 EXPORT_FILE=${2:-${IMG}.export}
@@ -12,10 +12,7 @@ REPO=`echo $IMG | cut -d':' -f1`
 # The import command is a pain to create,  do it in Python
 IMPORT_CMD=`squash-build-cmd ${IMG}  ${EXPORT_FILE}`
 
-time eval ${IMPORT_CMD}
-
-docker tag ${IMG}  ${REPO}:pre-import
+eval ${IMPORT_CMD}
 
 IMPORTED=`docker image ls |  head -2 | tail -1 | awk -e '{print($3);}'`
 docker tag ${IMPORTED} ${REPO}:squashed
-docker tag ${IMPORTED} $IMG
