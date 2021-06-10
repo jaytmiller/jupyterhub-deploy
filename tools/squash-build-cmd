@@ -1,5 +1,9 @@
 #! /usr/bin/env python
 
+"""This script handles the grunge of constructing a Docker import command which
+includes metadata associated with an exported image.
+"""
+
 import json
 import subprocess
 import argparse
