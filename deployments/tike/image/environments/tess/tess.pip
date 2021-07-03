@@ -1,7 +1,5 @@
-numpy>=1.16.0,<1.19.0
-tensorflow>=1.15.4,<2.0.0
 lightkurve
-eleanor
+#eleanor
 emcee
 george
 celerite
@@ -13,3 +11,4 @@ astroML>=1.0a1
 allesfitter
 tqdm
 astrocut
+tess-point

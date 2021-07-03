@@ -33,11 +33,11 @@ TESS_ALL_NOTEBOOKS=`find /home/jovyan/tike_content/code/test_notebooks -name '*.
 mkdir -p /opt/environments/tess/tests
 echo /home/jovyan/tike_content/code/test-cloud-lightkurve.py >>/opt/environments/tess/tests/notebooks
 
-echo /home/jovyan/tike_content/code/test_notebooks/packages_priority1.ipynb >>/opt/environments/tess/tests/notebooks
+# echo /home/jovyan/tike_content/code/test_notebooks/packages_priority1.ipynb >>/opt/environments/tess/tests/notebooks
 
 echo /home/jovyan/tike_content/code/test_notebooks/packages_priority2.ipynb >>/opt/environments/tess/tests/notebooks
 
-echo /home/jovyan/tike_content/code/test_notebooks/packages_priority3.ipynb >>/opt/environments/exoplanet/tests/notebooks
+echo /home/jovyan/tike_content/code/test_notebooks/packages_priority3.ipynb >>/opt/environments/tess/tests/notebooks
 
 # .............................................................................................
 # This is legacy content from prior Tess deployments.  Move to $HOME?

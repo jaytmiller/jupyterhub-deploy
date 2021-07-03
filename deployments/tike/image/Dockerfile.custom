@@ -55,24 +55,11 @@ RUN  /opt/common-scripts/env-src-install  tess  https://files.pythonhosted.org/p
 COPY --chown=${NB_UID}:${NB_GID} environments/tess/juliet.pip  /opt/environments/tess/juliet.pip
 RUN /opt/common-scripts/env-update  tess /opt/environments/tess/juliet.pip
 
-# COPY --chown=${NB_UID}:${NB_GID} environments/tess/ml.pip  /opt/environments/tess/ml.pip
-# RUN /opt/common-scripts/env-update  tess /opt/environments/tess/ml.pip
+COPY --chown=${NB_UID}:${NB_GID} environments/tess/ml.pip  /opt/environments/tess/ml.pip
+RUN /opt/common-scripts/env-update  tess /opt/environments/tess/ml.pip
 
-# --------------------------- EXOPLANET -------------------------------------
-
-COPY --chown=${NB_UID}:${NB_GID} environments/exoplanet/exoplanet.yml /opt/environments/exoplanet/exoplanet.yml
-RUN /opt/common-scripts/env-create  exoplanet /opt/environments/exoplanet/exoplanet.yml
-
-RUN /opt/common-scripts/install-common exoplanet
-
-COPY --chown=${NB_UID}:${NB_GID} environments/exoplanet/basic.pip  /opt/environments/exoplanet/basic.pip
-RUN /opt/common-scripts/env-update  exoplanet /opt/environments/exoplanet/basic.pip
-
-COPY --chown=${NB_UID}:${NB_GID} environments/exoplanet/exoplanet.pip  /opt/environments/exoplanet/exoplanet.pip
-RUN /opt/common-scripts/env-update  exoplanet /opt/environments/exoplanet/exoplanet.pip
-
-COPY --chown=${NB_UID}:${NB_GID} environments/exoplanet/ml.pip  /opt/environments/exoplanet/ml.pip
-RUN /opt/common-scripts/env-update  exoplanet /opt/environments/exoplanet/ml.pip
+COPY --chown=${NB_UID}:${NB_GID} environments/tess/exoplanet.pip  /opt/environments/tess/exoplanet.pip
+RUN /opt/common-scripts/env-update  tess /opt/environments/tess/exoplanet.pip
 
 # ----------------------------------------------------------------------
 COPY --chown=${NB_UID}:${NB_GID} environments/ /opt/environments
