@@ -16,3 +16,6 @@
 # to the within-container file system perspective,  not the CI-node file system.
 
 /opt/common-scripts/test-environments
+
+# Not covered ATM by env-test and may be the only case anywhere
+time   /opt/common-scripts/env-run tess    python /home/jovyan/tike_content/code/test-cloud-lightkurve.py
