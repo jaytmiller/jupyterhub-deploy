@@ -28,9 +28,11 @@ corner
 
 awscli
 boto3
+s3fs
 requests
 dask[distributed]
 future
 threadpoolctl
 joblib
 memoization
+h5py
