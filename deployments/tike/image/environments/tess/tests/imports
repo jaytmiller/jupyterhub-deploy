@@ -38,7 +38,7 @@ pyLIMA
 aas_timeseries
 s3fs
 
-#Pyriod
+#Pyriod-is-notebook-only-has-widgets
 allesfitter
-#tvguide
-#astrobase
+tvguide
+astrobase

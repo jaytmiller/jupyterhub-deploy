@@ -36,7 +36,8 @@ def parse_args():
 def main():
     args = parse_args()
     for notebook in args.notebooks:
-        set_kernel(args.kernel, args.kernel_display_name, notebook)
+        if not notebook.startswith("#"):
+            set_kernel(args.kernel, args.kernel_display_name, notebook)
 
 
 if __name__ == "__main__":

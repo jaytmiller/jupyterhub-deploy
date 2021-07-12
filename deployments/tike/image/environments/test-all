@@ -1,0 +1,6 @@
+#! /bin/bash
+
+set -eu
+
+/opt/common-scripts/test-imports tess `cat /opt/environments/tess/tests/imports`
+/opt/common-scripts/test-notebooks tess `cat /opt/environments/tess/notebooks /opt/environments/tess/long-notebooks`

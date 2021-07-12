@@ -55,7 +55,7 @@ RUN  /opt/common-scripts/env-src-install  tess  https://files.pythonhosted.org/p
 RUN  /opt/common-scripts/env-src-install  tess  https://files.pythonhosted.org/packages/95/5c/2a97a352d0c4ba59a0decf06964f5660a13ac57004014a62fe4a9e2a891a/juliet-2.1.2.tar.gz
 
 # transitleastsquares
-RUN  /opt/common-scripts/env-src-install  tess https://files.pythonhosted.org/packages/76/e6/371cff7a236330c5893486ac7a208e55c52ba1463bfb9ecc96676b03b36f/transitleastsquares-1.0.28.tar.gz
+# RUN  /opt/common-scripts/env-src-install  tess https://files.pythonhosted.org/packages/76/e6/371cff7a236330c5893486ac7a208e55c52ba1463bfb9ecc96676b03b36f/transitleastsquares-1.0.28.tar.gz
 
 # ----------
 

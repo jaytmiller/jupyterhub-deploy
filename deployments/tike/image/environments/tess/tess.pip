@@ -22,8 +22,9 @@ pyLIMA
 aas-timeseries
 
 tvguide
-astrobase
 
-#batman-package
-#radvel
-#juliet
+astrobase[all]
+
+#batman-package-installed-from-source
+#radvel-installed-from-source
+#juliet-installed-from-source
