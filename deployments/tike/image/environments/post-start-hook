@@ -33,7 +33,7 @@ rsync -r  /etc/default-home-contents/ /home/jovyan
 
 mkdir -p /opt/environments/tess/tests
 
-cat <<EOF >/opt/environments/tess/tests/notebooks
+echo <<EOF >/opt/environments/tess/tests/notebooks
     /home/jovyan/tike_content/code/test-cloud-lightkurve.py
     #/home/jovyan/tike_content/code/test_notebooks/packages_priority1.ipynb
     /home/jovyan/tike_content/code/test_notebooks/packages_priority2.ipynb
@@ -44,7 +44,7 @@ EOF
 
 # .............................................................................................
 
-cat <<EOF >/opt/environments/tess/tests/long-notebooks
+echo <<EOF >/opt/environments/tess/tests/long-notebooks
     /home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/beginner_how_to_use_lc/beginner_how_to_use_lc.ipynb
     /home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/beginner_how_to_use_dvt/beginner_how_to_use_dvt.ipynb
     /home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/beginner_tour_lc_tp/beginner_tour_lc_tp.ipynb
@@ -93,12 +93,12 @@ cat <<EOF >/opt/environments/tess/tests/long-notebooks
     /home/jovyan/spacetelescope-notebooks/MAST/Kepler/kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star/kepler_how_to_understand_and_manipulate_the_periodogram_of_an_oscillating_star.ipynb
     /home/jovyan/spacetelescope-notebooks/MAST/Kepler/kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology/kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology.ipynb
 
-#/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tasc_lc/interm_tasc_lc.ipynb \
-#/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.ipynb \
-#/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.ipynb \
-#/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.ipynb \
-#/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/beginner_tess_tap_search/beginner_tess_tap_search.ipynb \
-#/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tesscut_requests/interm_tesscut_requests.ipynb \
+    #/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tasc_lc/interm_tasc_lc.ipynb
+    #/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.ipynb
+    #/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.ipynb
+    #/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.ipynb
+    #/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/beginner_tess_tap_search/beginner_tess_tap_search.ipynb
+    #/home/jovyan/spacetelescope-notebooks/notebooks/MAST/TESS/interm_tesscut_requests/interm_tesscut_requests.ipynb
 
 EOF
 
