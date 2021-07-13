@@ -1,9 +1,15 @@
 #! /bin/bash
 
-set -eu
+set -u
 
 # Run basic CI import and notebook tests.
 time /opt/environments/test  # test all environments,  currently just tess
+basic_exit_status=$?
 
 # Run long notebook tests
 time /opt/common-scripts/test-notebooks tess `cat /opt/environments/tess/tests/long-notebooks`
+long_exit_status=$?
+
+if [ $basic_exit_status -ne 0 || $long_exit_status -ne 0 ]; then
+    exit 1
+fi
