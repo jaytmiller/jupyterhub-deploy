@@ -37,6 +37,8 @@ def main():
     args = parse_args()
     for notebook in args.notebooks:
         if not notebook.startswith("#"):
+            print(f"Setting kernel={args.kernel}  display_name={args.kernel_display_name}  notebook={notebook}")
+            sys.stdout.flush()
             set_kernel(args.kernel, args.kernel_display_name, notebook)
 
 

@@ -2,5 +2,8 @@
 
 set -eu
 
-/opt/common-scripts/test-imports tess `cat /opt/environments/tess/tests/imports`
-/opt/common-scripts/test-notebooks tess `cat /opt/environments/tess/notebooks /opt/environments/tess/long-notebooks`
+# Run basic CI import and notebook tests.
+time /opt/environments/test  # test all environments,  currently just tess
+
+# Run long notebook tests
+time /opt/common-scripts/test-notebooks tess `cat /opt/environments/tess/tests/long-notebooks`
