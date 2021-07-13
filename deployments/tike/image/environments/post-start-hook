@@ -50,19 +50,22 @@ cat <<EOF >/opt/environments/tess/tests/notebooks
     ${SN}/notebooks/MAST/TESS/beginner_astroquery_dv/beginner_astroquery_dv.ipynb
     ${SN}/notebooks/MAST/TESS/beginner_how_to_use_ffi/beginner_how_to_use_ffi.ipynb
     ${SN}/notebooks/MAST/TESS/beginner_how_to_use_tp/beginner_how_to_use_tp.ipynb
+EOF
 
-    #${SN}/notebooks/MAST/TESS/interm_tasc_lc/interm_tasc_lc.ipynb
-    #${SN}/notebooks/MAST/TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.ipynb
-    #${SN}/notebooks/MAST/TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.ipynb
-    #${SN}/notebooks/MAST/TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.ipynb
-    #${SN}/notebooks/MAST/TESS/beginner_tess_tap_search/beginner_tess_tap_search.ipynb
-    #${SN}/notebooks/MAST/TESS/interm_tesscut_requests/interm_tesscut_requests.ipynb
+# These are tests we'd like to run which fail for various reasons.
+cat <<EOF >/opt/environments/tess/tests/notebooks-failing
+    ${SN}/notebooks/MAST/TESS/interm_tasc_lc/interm_tasc_lc.ipynb
+    ${SN}/notebooks/MAST/TESS/interm_tesscut_dss_overlay/interm_tesscut_dss_overlay.ipynb
+    ${SN}/notebooks/MAST/TESS/interm_tesscut_astroquery/interm_tesscut_astroquery.ipynb
+    ${SN}/notebooks/MAST/TESS/interm_tess_prf_retrieve/interm_tess_prf_retrieve.ipynb
+    ${SN}/notebooks/MAST/TESS/beginner_tess_tap_search/beginner_tess_tap_search.ipynb
+    ${SN}/notebooks/MAST/TESS/interm_tesscut_requests/interm_tesscut_requests.ipynb
 EOF
 
 # .............................................................................................
 
 # cat <<EOF >/opt/environments/tess/tests/long-notebooks
-cat <<EOF >/opt/environments/tess/tests/notebooks
+cat <<EOF >>/opt/environments/tess/tests/notebooks
     ${SN}/notebooks/MAST/Kepler/Kepler_Lightcurve/kepler_lightcurve.ipynb
     ${SN}/notebooks/MAST/Kepler/Kepler_TPF/kepler_tpf.ipynb
     ${SN}/notebooks/MAST/Kepler/Kepler_DVT/Kepler_DVT.ipynb
@@ -71,10 +74,8 @@ cat <<EOF >/opt/environments/tess/tests/notebooks
     ${SN}/notebooks/MAST/K2/K2_TPF/K2_TPF.ipynb
     ${SN}/notebooks/MAST/K2/beginner_how_to_use_ffi/beginner_how_to_use_ffi.ipynb
 
-    #${SN}/notebooks/MAST/Kepler/kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.ipynb
     ${SN}/notebooks/MAST/Kepler/kepler_using_target_pixel_file_products_with_lightkurve/kepler_using_target_pixel_file_products_with_lightkurve.ipynb
     ${SN}/notebooks/MAST/Kepler/kepler_plotting_target_pixel_files/kepler_plotting_target_pixel_files.ipynb
-    #${SN}/notebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.ipynb
     ${SN}/notebooks/MAST/Kepler/kepler_creating_your_own_light_curves/kepler_creating_your_own_light_curves.ipynb
     ${SN}/notebooks/MAST/Kepler/kepler_combining_multiple_quarters/kepler_combining_multiple_quarters.ipynb
     ${SN}/notebooks/MAST/Kepler/kepler_interactively_inspecting_target_pixel_files_and_light_curves/kepler_interactively_inspecting_target_pixel_files_and_light_curves.ipynb
@@ -101,7 +102,17 @@ cat <<EOF >/opt/environments/tess/tests/notebooks
     ${SN}/notebooks/MAST/Kepler/kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology/kepler_how_to_estimate_a_stars_mass_and_radius_using_asteroseismology.ipynb
 EOF
 
+# More tests we'd like to run which fail for various reasons, originally part of long-noteboks.
+# cat <<EOF >/opt/environments/tess/tests/long-notebooks-failing
+cat <<EOF >>/opt/environments/tess/tests/notebooks-failing
+    ${SN}/notebooks/MAST/Kepler/kepler_searching_for_data_products/kepler_searching_for_data_products.ipynb
+    ${SN}/notebooks/MAST/Kepler/kepler_using_light_curve_products_with_lightkurve/kepler_using_light_curve_products_with_lightkurve.ipynb
+EOF
+
 # .............................................................................................
 
 /opt/common-scripts/set-notebook-kernel tess 'TESS' `cat /opt/environments/tess/tests/notebooks`
+/opt/common-scripts/set-notebook-kernel tess 'TESS' `cat /opt/environments/tess/tests/notebooks-failing`
+
 # /opt/common-scripts/set-notebook-kernel tess 'TESS' `cat /opt/environments/tess/tests/long-notebooks`
+# /opt/common-scripts/set-notebook-kernel tess 'TESS' `cat /opt/environments/tess/tests/long-notebooks-failing`
